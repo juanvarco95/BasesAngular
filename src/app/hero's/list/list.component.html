@@ -1,0 +1,27 @@
+<div>
+    <h1>List of Heroes</h1>
+    <ul>
+        <li *ngFor="let hero of heroes; let i = index">
+            {{i + 1}} - {{hero}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h2>Delete Hero</h2>
+    <ul>
+        <li *ngFor="let delHero of deleteHero; let i = index">
+            {{i + 1}} - {{delHero}}
+        </li>
+    </ul>
+</div>
+
+<h1 *ngIf="heroes.length == 0; else NoDelete">
+    All heroes are deleted already.
+</h1>
+<br>
+<ng-template #NoDelete>
+    All heroes are'nt deleted already.
+
+</ng-template>
+<button (click)="popHero()">Delete Hero</button>

@@ -1,0 +1,15 @@
+<div>
+
+    <h2 *ngIf="showName; else HideName">{{MyName}}</h2>
+    <br>
+    <h2 *ngIf="showName; else HideLastName">{{MyLastName}}</h2>
+
+    <p>
+        <ng-template #HideName>He Don't have name yet</ng-template>
+    </p>
+
+    <p>
+        <ng-template #HideLastName>He Don't have last name yet</ng-template>
+    </p>
+    <button (click)="changeShowName()">Show Name</button>
+</div>
